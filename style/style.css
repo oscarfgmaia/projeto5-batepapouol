@@ -1,35 +1,139 @@
-body{
+body {
     font-family: 'Roboto', sans-serif;
+
 }
 
-.site{
-background-color: red;
-width: 100%;
-height: 100%;
-position: relative;
+.site {
+    background-color: #f3f3f3;
+    height: 100vh;
+    position: relative;
 }
 
-header{
-display: flex;
-width: 100%;
-height: 80px;
-justify-content: space-between;
-align-items: center;
-background-color: white;
+header {
+    box-sizing: border-box;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.05);
+    display: flex;
+    width: 100%;
+    height: 80px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
 }
-header ion-icon{
+
+header ion-icon {
     font-size: 50px;
     padding: 20px 20px;
 }
-header img{
+
+header img {
     height: 53px;
     padding: 20px 20px;
 }
 
-footer{
-    background-color: blue;
+section {
+    box-sizing: border-box;
+    padding-top: 26px;
+    height: calc(100vh - 160px);
+    overflow: scroll;
+}
+
+.message-container {
+    padding: 0px 0px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.message-content {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 14px;
+    box-sizing: border-box;
+    padding: 10px 10px;
+    margin-bottom: 4px;
+}
+
+.time {
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 0em;
+    text-align: left;
+    color:
+        #AAAAAA;
+}
+
+.message {
+    background-color: white;
+    box-sizing: border-box;
+    display: flex;
+}
+
+.status {
+    background-color: #DCDCDC;
+}
+
+.private-message {
+    background-color: pink
+}
+
+.message-from {
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+.message-to {
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+footer {
+    background-color: white;
+    box-sizing: border-box;
+    box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.05);
+    position: absolute;
     height: 80px;
     width: 100%;
-    position: absolute;
-    top:100%;
+    bottom: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 20px;
+}
+
+footer input {
+    outline: none;
+    border: none;
+    width: 250px;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+footer input::placeholder {
+    color: black;
+    font-size: 18px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 25px;
+    letter-spacing: 0em;
+    text-align: left;
+
+}
+
+footer ion-icon {
+    font-size: 30px;
 }
