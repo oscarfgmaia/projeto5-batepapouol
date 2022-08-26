@@ -17,20 +17,32 @@
 
 <body>
     <div class="site">
+        <div class="menu hidden"">
+            <nav>
+                <div class="header"><span>Escolha um contato para enviar mensagem:</span></div>
+                <div class="users-container">
+                    <div class="user-container">
+                        <div class="icon-name">
+                            <div class="users"><ion-icon name="people"></ion-icon></div>
+                            <span class="send-to">Todos</span>
+                        </div>
+                        <span class="check"><ion-icon name="checkmark-sharp"></ion-icon></span>
+                    </div>
+                </div>
+            </nav>
+        </div>
         <header>
             <img src="./resources/logo_small.png" alt="logo_small">
-            <ion-icon name="people"></ion-icon>
+            <ion-icon name="people" onclick="openMenu()"></ion-icon>
         </header>
         <section>
             <div class="message-container">
-                <div class="message-content">
-                    <!--MESSAGENS ENTRAM AQUI-->
-                </div>
+                <!--DIVS AQUI-->
             </div>
         </section>
         <footer>
-            <input type="text" name="message-input" id="" placeholder="Escreva aqui">
-            <ion-icon name="paper-plane-outline"></ion-icon>
+            <input type="textarea" name="message-input" id="" placeholder="Escreva aqui">
+            <ion-icon name="paper-plane-outline" onclick="sendMessage()"></ion-icon>
         </footer>
     </div>
 
