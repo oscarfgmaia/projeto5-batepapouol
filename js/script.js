@@ -32,17 +32,25 @@ function getParticipants() {
 function verifyParticipants(promise) {
     const participants = promise.data
     const usersContainer = document.querySelector('.users-container');
+    let footerPrivateMsg = document.querySelector('.reserved')
     if(typeMessage === "message"){
         let publicMessage = document.querySelector('.public');
         let privateMessage = document.querySelector('.private');
         publicMessage.classList.remove('hidden')
-        privateMessage.classList.add('hidden')        
+        privateMessage.classList.add('hidden')     
+        footerPrivateMsg.classList.add('hidden')   
     }
     if(typeMessage === "private_message"){
         let publicMessage = document.querySelector('.public');
         let privateMessage = document.querySelector('.private');
         privateMessage.classList.remove('hidden')
         publicMessage.classList.add('hidden')
+        footerPrivateMsg = document.querySelector('.reserved')
+        footerPrivateMsg.classList.remove('hidden')
+        footerPrivateMsg.innerHTML = 
+        `
+        Enviando para ${deliveryTo} (reservadamente)
+        `
     }
     usersContainer.innerHTML =
         `
