@@ -118,7 +118,7 @@ function processPromise(promise) {
             </div>
             `
         }
-        if (messages[i].type === "private_message") {
+        if (messages[i].type === "private_message" && (messages[i].to === user.name || messages[i].from === user.name ||messages[i].to === "Todos")) {
             messageContainer.innerHTML += `
             <div class="message-content private-message">
                 <span class="time">(${messages[i].time})</span>
