@@ -17,22 +17,50 @@
 
 <body>
     <div class="site">
-        <div class="menu hidden"">
+        <div class="login">
+            <img src="./resources/logo_large.png" alt="">
+            <div class="login-area">
+                <input type="text" name="login" id="usernameId" placeholder="Digite seu nome" class="">
+                <button onclick="sendUserName()" class="" id="button">Entrar</button>
+                <div class="spinner hidden"></div>
+            </div>
+        </div>
+        <div class="menu hidden">
+            <div class="close-menu" onclick="closeMenu()"></div>
             <nav>
                 <div class="header"><span>Escolha um contato para enviar mensagem:</span></div>
                 <div class="users-container">
+                    <!--
                     <div class="user-container">
                         <div class="icon-name">
                             <div class="users"><ion-icon name="people"></ion-icon></div>
                             <span class="send-to">Todos</span>
                         </div>
                         <span class="check"><ion-icon name="checkmark-sharp"></ion-icon></span>
+                    </div>-->
+                </div>
+
+                <div class="visibility"><span>Escolha a visibilidade:</span></div>
+                <div class="message-type-container" onclick="setPublicMessage()">
+                    <div class="icon-type">
+                        <div><ion-icon name="lock-open"></ion-icon></div>
+                        <span class="send-to">Público</span>
                     </div>
+                    <span class="check hidden public"><ion-icon name="checkmark-sharp"></ion-icon></span>
+                </div>
+
+                <div class="message-type-container" onclick="setPrivateMessage()">
+                    <div class="icon-type">
+                        <div><ion-icon name="lock-closed"></ion-icon></div>
+                        <span class="send-to">Reservadamente</span>
+                    </div>
+                    <span class="check hidden private"><ion-icon name="checkmark-sharp"></ion-icon></span>
                 </div>
             </nav>
+            
         </div>
         <header>
-            <img src="./resources/logo_small.png" alt="logo_small">
+            <img src="./resources/logo_small.png" alt="logo_small" onclick="window.location.reload()">
             <ion-icon name="people" onclick="openMenu()"></ion-icon>
         </header>
         <section>

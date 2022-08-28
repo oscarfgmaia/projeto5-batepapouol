@@ -2,6 +2,81 @@ body {
     font-family: 'Roboto', sans-serif;
 
 }
+button{
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	outline: inherit;
+}
+
+.login {
+    position: fixed;
+    z-index: 2;
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login img {
+    margin-top: 72px;
+    width: 130px;
+}
+
+.login-area {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-area input {
+    width: 261px;
+    height: 54px;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 25px;
+    letter-spacing: 0em;
+    text-align: center;
+    margin-bottom: 10px;
+    border: 1px solid #D7D7D7;
+    border-radius: 4px;
+}
+
+.login-area button {
+    width: 109px;
+    height: 45px;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 25px;
+    letter-spacing: 0em;
+    text-align: center;
+    background: #E7E7E7;
+    border-radius: 9px;
+}
+.login-area button:hover {
+    background: #c4c4c4;
+}
+
+.spinner {
+    border: 8px solid rgba(0, 0, 0, 0.1);
+    border-left-color: #9D321E;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+  }
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
 
 .site {
     background-color: #f3f3f3;
@@ -20,11 +95,17 @@ body {
     z-index: 1;
 }
 
+.close-menu{
+    height: 100%;
+    width: 30%;
+}
+
 nav {
     display: flex;
     background-color: white;
     width: 70%;
     height: 100vh;
+    
 }
 
 .hidden {
@@ -90,8 +171,6 @@ section {
 
 .message {
     background-color: white;
-    box-sizing: border-box;
-    display: flex;
 }
 
 .status {
@@ -130,12 +209,23 @@ nav {
     flex-direction: column;
 }
 
-nav .header {
+nav .header,.visibility {
     width: 100%;
     height: 84px;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.header,.visibility span {
+    width: 65%;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 19px;
+    letter-spacing: 0em;
+    text-align: center;
+}
+.visibility span{
     font-size: 16px;
     font-weight: 700;
     line-height: 19px;
@@ -143,23 +233,19 @@ nav .header {
     text-align: center;
 }
 
-.header span {
-    width: 65%;
-}
-
-nav .users ion-icon {
+nav .users, ion-icon {
     font-size: 35px;
 }
 
-nav .users-container{
+
+nav .users-container {
     display: flex;
     flex-direction: column;
-    background-color: grey;
     overflow: scroll;
-    height: 300px;
+    height: 200px;
 }
 
-nav .user-container {
+nav .user-container,.message-type-container {
     display: flex;
     align-items: center;
     margin-left: 20px;
@@ -178,15 +264,32 @@ nav .user-container .send-to {
     display: flex;
     align-items: center;
 }
-nav .icon-name{
+
+nav .message-type-container .send-to {
+    padding-left: 10px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    display: flex;
+    align-items: center;
+}
+
+nav .icon-name,.icon-type {
     display: flex;
     overflow: hidden;
 }
-nav .check{
+
+nav .check {
     margin-left: 5px;
     font-weight: 700;
     color: #28BB25;
+    font-size: 10px;
 }
+nav .check ion-icon {
+    font-size: 15px;
+}
+
 footer {
     background-color: white;
     box-sizing: border-box;
