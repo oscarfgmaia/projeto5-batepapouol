@@ -28,6 +28,10 @@ function sendUserName() {
 function getParticipants() {
     const getParticipantsPromise = axios.get('https://mock-api.driven.com.br/api/v6/uol/participants')
     getParticipantsPromise.then(verifyParticipants)
+    getParticipantsPromise.catch(unableToGetParticipants)
+}
+function unableToGetParticipants(erro){
+    console.log("Unable to get Participants erro: "+erro)
 }
 function verifyParticipants(promise) {
     const participants = promise.data
@@ -154,6 +158,14 @@ function logIn() {
 }
 function userStayOn() {
     const userOnline = axios.post('https://mock-api.driven.com.br/api/v6/uol/status', user);
+    userOnline.catch(failedToSendUserStayOn)
+    //userOnline.then(requestSentUserOn)
+}
+/* function requestSentUserOn(promise){
+    console.log("Request UserOn sent: "+promise)
+} */
+function failedToSendUserStayOn(erro){
+    console.log("Failed to updatechat erro:"+erro)
 }
 
 function updateChat() {
@@ -161,6 +173,10 @@ function updateChat() {
     loginScreen.classList.add('hidden');
     const getPromise = axios.get('https://mock-api.driven.com.br/api/v6/uol/messages')
     getPromise.then(processPromise)
+    getPromise.catch(errorToUpdateChat)
+}
+function errorToUpdateChat(erro){
+    console.log("Failed to updatechat erro:"+erro)
 }
 
 
